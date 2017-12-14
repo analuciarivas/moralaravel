@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container body-form">
+    <div class="container-fluid body-form">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">

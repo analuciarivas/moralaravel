@@ -10,6 +10,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic%7CMontserrat:400%7COswald:400&amp;subset=latin,latin,latin" media="all">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" >
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/custom.css">
     <!-- <link rel="stylesheet" href="/css/estilos.css"> -->
@@ -20,69 +21,73 @@
 
   </head>
 
-
-
 <body>
 
+<header>
 
 
-    <body>
-      <header>
-        <nav class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-      <!-- button se convierte en hamburguesa en menu mobile -->
+  <nav class="navbar navbar-expand-lg navbar-inverse fixed-top">
+          <div class="container">
+          <!-- <div class="navbar-header"> -->
+          <!-- button se convierte en hamburguesa en menu mobile -->
 
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar">-</span>
-        <span class="icon-bar">-</span>
-        <span class="icon-bar">-</span>
-      </button>
-      <a class="navbar-brand" href="https://www.tiendamora.com.ar/" target="_blank">
-      <img alt="Tienda Mora" src="/img/logochico.jpg">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+          <a class="navbar-brand" href="https://www.tiendamora.com.ar/" target="_blank">
+          <img alt="Tienda Mora" src="/img/logochico.jpg">
+          </a>
 
-        <li><a href="{{ route('index') }}">home</a></li>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >linea maternity<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">embarazo</a></li>
-            <li><a href="#">lactancia</a></li>
-            <li><a href="#">post parto</a></li>
-          </ul>
-        </li>
+            <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar">-</span>
+              <span class="icon-bar">-</span>
+              <span class="icon-bar">-</span>
+            </button>
+
+          <a class="navbar-brand" href="https://www.tiendamora.com.ar/" target="_blank">
+          <img alt="Tienda Mora" src="/img/logochico.jpg">
+          </a>
+
+          <div class="navbar-nav navbar-right">-->
+          <div class="collapse navbar-collapse" id="navbarResponsive"> <!-- bs-example-navbar-collapse-1 -->
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ route('index') }}">home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >linea maternity</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/producto">embarazo</a></li>
+                    <li><a href="/producto">lactancia</a></li>
+                    <li><a href="/producto">post parto</a></li>
+                  </ul>
+                </li>
 
         <!-- Authentication Links -->
-          @guest
-        <li><a href="{{ route('login') }}">login</a></li>
-          @else
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-              {{ Auth::user()->name }} <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li>
-                <a href="/editarUsuario/{{Auth::user()->id}}">mi cuenta</a>
-            </li>
-            <li>
-                <a href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                             document.getElementById('logout-form').submit();">
-                    logout
+              @guest
+              <li><a href="{{ route('login') }}">login</a></li>
+                @else
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+                    {{ Auth::user()->name }} <span class="caret"></span>
                 </a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                </form>
-            </li>
-          </ul>
-        <li>
-          @endguest
-          <li><a href="{{ route('faq') }}">contacto</a></li>
+              <ul class="dropdown-menu">
+                <li>
+                    <a href="/editarUsuario/{{Auth::user()->id}}">mi cuenta</a>
+                </li>
+                <li>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();">
+                        logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+              </ul>
+              @endguest
+        <li><a href="{{ route('faq') }}">contacto</a></li>
 
 
         <!-- <li><a href="{{ route('login') }}">mi cuenta</a></li>
@@ -92,17 +97,21 @@
           </ul>
         </div>
       </div>
+</div>
     </nav>
-      </header>
+
+  </header>
+
+
+
       @yield('content')
-      <footer>
+
+  <footer>
         <div class="info-bar">
               <h5>Envio gratis con tu compra de $1500 o Mas!</h5>
-            </div>
+        </div>
 
     <!-- fin de banner promociones sobre el footer -->
-
-    <footer>
       <div class="container">
         <div class="row">
 
@@ -136,13 +145,14 @@
 
         </div>
 
-      </div>
       </footer>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <!-- adds jQuery via Google CDN before the closing </body> tag… -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="js/bootstrap.min.js"></script>
   <!-- end of jQuery -->

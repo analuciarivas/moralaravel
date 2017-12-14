@@ -1,21 +1,8 @@
-@extends('plantilla')
+@extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Home</title>
-        <link rel="stylesheet" href="/css/app.css">
 
-     </head>
+<!-- PAGINA DE TODOS LOS PRODUCTOS  -->
 
-      {{-- <ul>
-         @foreach ($products as $product)
-             <li><a href="/products/{{$product->id}}">{{$product->name}}</a></li>
-         @endforeach
-     </ul> --}}
-
-  <body>
  <!-- Page Content -->
  <div class="container">
    <div class="row">
@@ -83,8 +70,5 @@
    </div>
    <!-- /.row -->
  </div>
- <!-- /.container -->
- <!-- Content Row -->
- </body>
-</html>
+
 @endsection

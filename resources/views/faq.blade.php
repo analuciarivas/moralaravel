@@ -8,8 +8,8 @@
         <div class="col-md-12">
           <ul class="breadcrumb">
             <li><a href="index.html">Home</a></li>
-            <li><a href="category.html">Lactancia</a></li>
-            <li>Corpiño de amamantar</li>
+            <li><a href="#">Lactancia</a></li>
+            <li>{{$products->name}}</li>
           </ul>
         </div>
       </div>
@@ -22,15 +22,15 @@
 					<div class="preview col-md-6">
 
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" /></div>
-						  <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
+						  <div class="tab-pane active" id="pic-1"><img src="{{ asset('storage/' . $productS->fotopath) }}" alt=""></div>
+						  <div class="tab-pane" id="pic-2"><img src="{{ asset('storage/' . $productS->fotopath) }}" alt=""></div>
 						  <!-- <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div> -->
 						  <!-- <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
 						  <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div> -->
 						</div>
 						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-						  <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{ asset('storage/' . $productS->fotopath) }}" alt=""></a></li>
+						  <li><a data-target="#pic-2" data-toggle="tab"><img src="{{ asset('storage/' . $productS->fotopath) }}" alt=""></a></li>
 						  <!-- <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li> -->
 						  <!-- <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
 						  <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li> -->
@@ -38,7 +38,7 @@
 
 					</div>
 					<div class="details col-md-6">
-						<h3 class="product-title">Corpiño de amamantar</h3>
+						<h3 class="product-title">{{$products->name}}</h3>
 						<div class="rating">
 							<div class="stars">
 								<span class="fa fa-star checked"></span>

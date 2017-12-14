@@ -1,46 +1,32 @@
-@extends('plantilla')
+@extends('layouts.app')
 @section('content')
 
-  <!DOCTYPE html>
-  <html>
-      <head>
-          <meta charset="utf-8">
-          <title>{{$products->name}}</title>
-      </head>
-      <body>
+<div class="container-fluid">
+<div class="row">
+  <div class="nav.breadcrumb">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Lactancia</a></li>
+          <li><a href=""> {{$products->name}}</a></li>
+        </ul>
+      </div>
+  </div>
+</div>
+
+
+
 
           <h1>{{$products->name}}</h1>
+<<<<<<< HEAD
           <img src="{{ asset('storage/' . $products->fotoPath) }}" alt="">
+=======
+          {{-- <img src="{{ asset('storage/' . $products->fotoPath) }}" alt=""> --}}
+>>>>>>> 8afb1803e601ce9712d08311579038df31f60e9d
           <form action="/products/{{$products->id}}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
-            </form>
-
-        <html lang="en">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Shop Item - Start Bootstrap Template</title>
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
-        <link href="css/shop-item.css" rel="stylesheet">
-      </head>
-      <body>
-
-        <!-- Page Content -->
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <h1 class="my-4">Tienda Mora Maternity</h1>
-              <div class="list-group">
-                <a href="#" class="list-group-item active">Maternity</a>
-                <a href="#" class="list-group-item">Post Parto</a>
-                <a href="#" class="list-group-item">Lactancia</a>
-              </div>
-            </div>
-            <!-- /.col-lg-3 -->
+          </form>
 
             <div class="col-lg-9">
               <div class="card mt-4">
@@ -89,7 +75,7 @@
 
           </div>
         {{-- </ul>
-          <img src="{{ asset('storage/' . $product->fotopath) }}" alt="">
+          <img src="{{ asset('storage/' . $products->fotoPath) }}" alt="">
           <a href="/editarProducts/{{$products->id}}">
             <button type="button" name="button">Editar</button>
           </a>
