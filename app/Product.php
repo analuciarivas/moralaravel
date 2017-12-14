@@ -7,7 +7,7 @@ class Product extends Model
 {
 
      // Se adapta nuestro fillable para que podamos guardar el path en nuestra tabla:
-     protected $fillable = ['name','image', 'active', 'cost', 'profit_margin', 'category_id','stock', 'color', 'talle', 'fotopath'];
+     protected $fillable = ['name','image', 'active', 'cost', 'profit_margin', 'category_id','stock', 'color', 'talle', 'fotoPath'];
 
      // le agregamos al modelo Product una función que nos permita saber el
       // precio total de un producto (cost + profit_margin)

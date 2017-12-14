@@ -59,7 +59,9 @@ class ProductoController extends Controller
               "colors" => $colors,
               ];
 
-              return view('products.create', $variables);
+               return view('products.create', $variables);
+
+
           }
 
           public function store(Request $request) {
@@ -97,9 +99,10 @@ class ProductoController extends Controller
                   'stock' => $request->input('stock'),
                   'fotoPath' => $fotoPath
                 ]);
+                //dd($product);
 
                 $product->save();
-              }
+              
 
           //       // $property = \App\Property::create ([
           //       //   'id_producto' => $product->id,
@@ -109,9 +112,9 @@ class ProductoController extends Controller
           //       // $property->save();
           //
           //
-          //       // return redirect('/producto');
+           return redirect('/producto');
           //
-          // }
+          }
 
            public function edit($id) {
                $products = \App\Product::find($id);
@@ -145,7 +148,7 @@ class ProductoController extends Controller
                   $products->fotoPath = $fotoPath;
                   $products->save();
 
-                    return redirect('/producto/'.$id);
+                  return redirect('/producto/'.$id);
 
               }
 

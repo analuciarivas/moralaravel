@@ -10,7 +10,7 @@
       <body>
 
           <h1>{{$products->name}}</h1>
-          {{-- <img src="{{ asset('storage/' . $productS->fotopath) }}" alt=""> --}}
+          <img src="{{ asset('storage/' . $products->fotoPath) }}" alt="">
           <form action="/products/{{$products->id}}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
