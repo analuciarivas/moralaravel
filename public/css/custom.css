@@ -216,7 +216,7 @@ a:hover {
 	color: #9C4BA3;
 }
 
-.dropdown-menu li a {
+.dropdown-menu .my-4 li a {
 	font-family:"Montserrat","Helvetica Neue",Arial,sans-serif;
 	text-transform: uppercase;
 }

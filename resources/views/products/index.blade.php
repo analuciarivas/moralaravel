@@ -1,50 +1,9 @@
-@extends('plantilla')
+
+@extends('layouts.app')
 @section('content')
-<!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Home</title>
-        <link rel="stylesheet" href="/css/app.css">
 
-        <nav class="navbar navbar-default" role="navigation">
-        <div class="navbar-header">
-         <button type="button" class="navbar-toggle" data-toggle="collapse"
-          data-target=".navbar-ex1-collapse">
-          <div class="container">
-            <div class="navbar-header">
-           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"> </span>
-              <span class="icon-bar"> </span>
-              <span class="icon-bar"> </span>
-              </button>
-              <a class="navbar-brand" href="https://www.tiendamora.com.ar/" target="_blank">
-              <img alt="Tienda Mora" src="img/logochico.jpg">
-              </a>
-              </div>
-              <div class="btn-group">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span>  </button>
-              <ul class="dropdown-menu">
-                <li><a href="#">embarazo</a></li>
-                <li><a href="#">lactancia</a></li>
-                <li><a href="#">post parto</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-              </ul>
-            </div>
-            </div>
-          </div>
-         </nav>
-     </head>
+<!-- PAGINA DE TODOS LOS PRODUCTOS  -->
 
-      {{-- <ul>
-         @foreach ($products as $product)
-             <li><a href="/products/{{$product->id}}">{{$product->name}}</a></li>
-         @endforeach
-     </ul> --}}
-
-  <body>
  <!-- Page Content -->
  <div class="container">
    <div class="row">
@@ -112,8 +71,5 @@
    </div>
    <!-- /.row -->
  </div>
- <!-- /.container -->
- <!-- Content Row -->
- </body>
-</html>
+
 @endsection
