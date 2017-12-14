@@ -32,6 +32,7 @@
     <div class="container">
       <div class="navbar-header">
       <!-- button se convierte en hamburguesa en menu mobile -->
+
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar">-</span>
@@ -44,6 +45,9 @@
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="{{ route('index') }}">home</a></li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >linea maternity<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -54,38 +58,32 @@
         </li>
 
         <!-- Authentication Links -->
-                  <ul class="nav navbar-nav">
-                        @guest
-                            <li><a href="{{ route('login') }}">login</a></li>
-                            <li><a href="{{ route('register') }}">registrate</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+          @guest
+        <li><a href="{{ route('login') }}">login</a></li>
+          @else
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
+              {{ Auth::user()->name }} <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+                <a href="/editarUsuario/{{Auth::user()->id}}">mi cuenta</a>
+            </li>
+            <li>
+                <a href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                             document.getElementById('logout-form').submit();">
+                    logout
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+          </ul>
+        <li>
+          @endguest
+          <li><a href="{{ route('faq') }}">contacto</a></li>
 
-                                <ul class="dropdown-menu">
-                                  <li>
-                                      <a href="/editarUsuario/{{Auth::user()->id}}">mi cuenta</a>
-
-                                  </li>
-                                  <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    <li><a href="{{ route('faq') }}">contacto</a></li>
-                    <li><a href="{{ route('index') }}">home</a></li>
-                    </ul>
 
         <!-- <li><a href="{{ route('login') }}">mi cuenta</a></li>
         <li><a href="{{ url('/logout') }}">logout</a></li>
