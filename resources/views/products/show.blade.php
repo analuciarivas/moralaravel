@@ -135,7 +135,7 @@
         <div class="preview-pic tab-content">
           <div class="tab-pane active" id="pic-1"><img src="{{ asset('storage/' . $products->fotoPath) }}" alt=""></div>
           <div class="tab-pane" id="pic-2"><img src="{{ asset('storage/' . $products->fotoPath) }}" alt=""></div>
-          <!-- <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div> -->
+          <!-- <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/22" /></div> -->
           <!-- <div class="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
           <div class="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div> -->
         </div>
