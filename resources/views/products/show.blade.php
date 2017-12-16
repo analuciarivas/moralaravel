@@ -242,7 +242,11 @@
 
 
           <h1>{{$products->name}}</h1>
+<<<<<<< HEAD
+          <img src="{{ asset('storage/' . $products->fotoPath) }}" alt="">
+=======
           {{-- <img src="{{ asset('storage/' . $products->fotoPath) }}" alt=""> --}}
+>>>>>>> 8afb1803e601ce9712d08311579038df31f60e9d
           <form action="/products/{{$products->id}}" method="post">
                 {{ csrf_field() }}
                 {{ method_field('delete') }}
