@@ -109,7 +109,11 @@
             <hr class="hr--underline">
             <ul class="navigation">
               <li><a href="{{ route('index') }}">home</a></li>
+              @guest
+              <li><a href="{{ route('login') }}">login</a></li>
+              @else
               <li><a href="/editarUsuario/{{Auth::user()->id}}">mi cuenta</a></li>
+              @endguest
               <li><a href="{{ route('faq') }}">FAQ</a></li>
             </ul>
             <p></p>
