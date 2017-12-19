@@ -97,7 +97,7 @@
 
   <footer>
         <div class="info-bar">
-              <h5>Envio gratis con tu compra de $1500 o Mas!</h5>
+              <h5>Envío gratis con tu compra de $1500 o Mas!</h5>
         </div>
 
     <!-- fin de banner promociones sobre el footer -->
@@ -109,7 +109,7 @@
             <hr class="hr--underline">
             <ul class="navigation">
               <li><a href="{{ route('index') }}">home</a></li>
-              <li><a href="{{ route('login') }}">mi cuenta</a></li>
+              <li><a href="/editarUsuario/{{Auth::user()->id}}">mi cuenta</a></li>
               <li><a href="{{ route('faq') }}">FAQ</a></li>
             </ul>
             <p></p>
