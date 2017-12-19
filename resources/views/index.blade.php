@@ -1,7 +1,7 @@
 @extends('layouts.app')
-
 @section('content')
 
+<!-- PAGINA DE INICIO  -->
 
 
   <!-- aca va la imagen de arriba - hero element -->
@@ -37,21 +37,21 @@
               <img src="img/calzaDestacados.jpg" class="img-thumbnail" alt=" " width=300px>
         			<h3>mejorar la postura</h3>
         			<p>A demanda. A medida que crece la panza aumenta el soporte abdominal y lumbar de nuestros diseños.</p>
-              <h3><a>leggings y fajas de embarazada</a></h3>
+              <!-- <h4><a>leggings y fajas de embarazada</a></h4> -->
         		</div>
 
         		<div class="col-sm-4">
         			<img src="img/moratop-02.jpg" class="img-thumbnail" alt=" " width=300px>
         			<h3>ponerle el pecho</h3>
         			<p>La leche materna es lo mejor para el bebe. Nuestra linea incorpora el diseño para facilitar la lactancia.</p>
-              <h3><a>camisones, chemissettes y corpiños</a></h3>
+              <!-- <h4><a>camisones, chemissettes y corpiños</a></h4> -->
         		</div>
 
         		<div class="col-sm-4">
         			<img src="img/trusaDestacados.jpg" class="img-thumbnail" alt=" " width=300px>
         			<h3>sin costuras</h3>
         			<p>Sin marcas, extrasuave. La tecnología del tejido sin costuras garantiza la suavidad en todas las etapas del embarazo.</p>
-              <h3><a>linea seamless</a></h3>
+              <!-- <h4><a>linea seamless</a></h4> -->
         		</div>
 
     </div>

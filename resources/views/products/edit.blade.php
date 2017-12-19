@@ -1,13 +1,6 @@
 @extends('plantilla')
 @section('content')
 
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Editar productos</title>
-    <link rel="stylesheet" href="/css/app.css">
- </head>
-   <body>
      <div class="container">
         <h1>Editando: {{$products->name}}</h1>
             <form class="col-md-5" action="/productos/{{$products->id}}" method="post" enctype="multipart/form-data">
@@ -128,6 +121,5 @@
                  <button type="submit" class="btn btn-danger">Borrar</button>
             </form>
       </div>
-    </body>
-  </html>
+
 @endsection

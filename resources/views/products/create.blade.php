@@ -1,14 +1,6 @@
 @extends('plantilla')
 @section('content')
 
-  <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="/css/app.css">
-</head>
-<body>
     <div class="container">
       <h1>Agregar Productos</h1>
       @if (isset($errors))
@@ -131,6 +123,4 @@
           </div>
       </form>
   </div>
-</body>
-</html>
 @endsection

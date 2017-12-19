@@ -1,14 +1,17 @@
 @extends('layouts.app')
 @section('content')
 
+<!-- PAGINA DE CADA UNO DE LOS PRODUCTOS  -->
+
+
 <div class="container-fluid">
 <div class="row">
   <div class="nav.breadcrumb">
       <div class="col-md-12">
         <ul class="breadcrumb">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Lactancia</a></li>
-          <li><a href=""> {{$products->name}}</a></li>
+          <li><a href="/index">Home</a></li>
+          <li><a href="/producto">Lactancia</a></li>
+          <li><a href="/producto/{{$products->id}}"> {{$products->name}}</a></li>
         </ul>
       </div>
   </div>
@@ -24,8 +27,8 @@
             <div class="tab-pane" id="pic-3"><img src="http://via.placeholder.com/400x252" alt=""/></div> <!--http://placekitten.com/400/252-->
           </div>
           <ul class="preview-thumbnail nav nav-tabs">
-            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{ asset('storage/' . $products->fotoPath) }}" alt=""></a></li>
-            <li><a data-target="#pic-2" data-toggle="tab"><img src="{{ asset('storage/' . $products->fotoPath) }}" alt=""></a></li>
+            <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="{{ asset('storage/' . $products->fotoPath) }}" alt="" width="200" ></a></li>
+            <li><a data-target="#pic-2" data-toggle="tab"><img src="{{ asset('storage/' . $products->fotoPath) }}" alt="" width="200" ></a></li>
             <li><a data-target="#pic-3" data-toggle="tab"><img src="http://via.placeholder.com/200x126" /></a></li>
           </ul>
         </div>
@@ -49,7 +52,7 @@
           @foreach ($colors as $color)
           <span><i class="fa fa-square" aria-hidden="true" style="color:{{$color->color}}"></i>
           @endforeach
-            <select name="color"  onclick="LS.urlAddParam('Color Primario', 'Blanco');">
+            <select name="color">
             @foreach ($colors as $color)
               <option value="{{$color->id}}">{{$color->color}}</option>
             @endforeach
@@ -58,40 +61,39 @@
         <!-- pregunta: quiero cambiar en la base de datos para que se vea el color, que el color se pueda mostrar -->
         <div class="product__social social">
           <h5>Compartilo:
-          <a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-facebook"></i> </a>
-          <a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-twitter"></i> </a>
-          <a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-instagram"></i> </a>
-
-        </h5>
-
-      </div>
+        <button class=" btn btn-default" type="button"><span class="fa fa-facebook"></span></button>
+        <button class=" btn btn-default" type="button"><span class="fa fa-instagram"></span></button>
+        <button class=" btn btn-default" type="button"><span class="fa fa-twitter"></span></button>
+      </div></h5>
       <div class="action">
-        <p></p>
         <button class="add-to-cart btn btn-default" type="button">COMPRAR</button>
-        <button class="like btn btn-default" type="button"><span class="fa fa-facebook"></span></button>
+        <!-- <button class="like btn btn-default" type="button"><span class="fa fa-facebook"></span></button>
         <button class="like btn btn-default" type="button"><span class="fa fa-instagram"></span></button>
         <button class="like btn btn-default" type="button"><span class="fa fa-twitter"></span></button>
-      </div>
+      </div> -->
     </div>
 
         </div>
       </div>
 
+      <!-- /.row -->
+    @guest
+
+    @else
+    @if (Auth::user()->name == "admin")
+       +                      <form action="/products/{{$products->id}}" method="post">
+       +                            {{ csrf_field() }}
+       +                            {{ method_field('delete') }}
+       +                          <a href="/producto/{{$products->id}}/edit">
+       +                            <button type="button" name="button">Editar</button>
+       +                          </a>
+       +                      </form>
+      @endif
+      @endguest
+     </div>
     </div>
 
 
 
-                    <!-- @if (Auth::user()->name == "admin")
-                      <form action="/products/{{$products->id}}" method="post">
-                            {{ csrf_field() }}
-                            {{ method_field('delete') }}
-                          <a href="/editarProducts/{{$products->id}}">
-                            <button type="button" name="button">Editar</button>
-                          </a>
-                          <a href="/eliminarProducts/{{$products->id}}">
-                            <button type="button" name="button">Eliminar</button>
-                          </a>
-                      </form>
-                    @endif -->
 
 @endsection

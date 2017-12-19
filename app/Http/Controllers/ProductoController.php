@@ -102,7 +102,7 @@ class ProductoController extends Controller
                 //dd($product);
 
                 $product->save();
-              
+
 
           //       // $property = \App\Property::create ([
           //       //   'id_producto' => $product->id,
